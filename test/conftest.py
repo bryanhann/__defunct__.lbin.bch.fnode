@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from bch_node_lib import Node
+from bch_node_lib.node  import Node
 import time
 import tempfile
 

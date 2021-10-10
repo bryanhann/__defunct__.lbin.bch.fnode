@@ -1,5 +1,5 @@
 import pytest
-from bch_node_lib import Node
+from bch_node_lib.node import Node
 
 def test_children(ROOT):
     assert len(list(ROOT.children())) == 2
