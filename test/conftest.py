@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from bch_node_lib.node  import Node
+from bch.node.class_node  import Node
 import time
 import tempfile
 
@@ -51,7 +51,8 @@ def NODES(ROOT):
 def DICT(NODES):
     acc={}
     for node in NODES:
-        name = node.path().name
+        name = node.path.name
+        #name = node.path().name
         if not name in acc:
             acc[name] = []
         acc[name].append(node)
@@ -61,8 +62,9 @@ def DICT(NODES):
 def PLATTER(NODES):
     it=Namespace()
     for node in NODES:
-        name = node.path().name
-        if node.fpath(): continue
+        #name = node.path().name
+        name = node.path.name
+        if node.fpath: continue
         if name in '.bch'.split(): continue
         setattr( it, name, node )
     return it
